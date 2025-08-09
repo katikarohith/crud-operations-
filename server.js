@@ -12,12 +12,10 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.static(path.join(__dirname,"public")));
 const port= process.env.PORT ||8080
+ const dotenv = require('dotenv');
 
-
-import dotenv from 'dotenv';
 dotenv.config(); // load variables from .env
 
-import mysql from 'mysql2';
 
 // create connection reading from env
 const connection = mysql.createConnection({
