@@ -14,6 +14,30 @@ app.use(express.static(path.join(__dirname,"public")));
 const port= process.env.PORT ||8080
 
 
+import dotenv from 'dotenv';
+dotenv.config(); // load variables from .env
+
+import mysql from 'mysql2';
+
+// create connection reading from env
+const connection = mysql.createConnection({
+  host: process.env.DB_HOST || 'localhost',
+  port: process.env.DB_PORT ? Number(process.env.DB_PORT) : 3306,
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || 'apnacollege62',
+  database: process.env.DB_NAME || 'delta_app'
+});
+
+connection.connect(err => {
+  if (err) {
+    console.error('Database connection failed:', err);
+    process.exit(1); // optional: crash so Render shows failure
+  }
+  console.log('Connected to DB');
+});
+
+
+
 let getUser = () => {
   return [
     faker.datatype.uuid(),
@@ -23,12 +47,6 @@ let getUser = () => {
   ];
 };
 
-let connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "apnacollege62",
-  database: "delta_app",
-});
 
 app.get("/", (req, res) => {
   let q = `SELECT count(*) FROM user`;
