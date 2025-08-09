@@ -11,28 +11,19 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.static(path.join(__dirname,"public")));
-const port= process.env.PORT ||8080
- const dotenv = require('dotenv');
-
-dotenv.config(); // load variables from .env
+const port= 8080;
 
 
-// create connection reading from env
-const connection = mysql.createConnection({
-  host: process.env.DB_HOST || 'localhost',
-  port: process.env.DB_PORT ? Number(process.env.DB_PORT) : 3306,
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || 'apnacollege62',
-  database: process.env.DB_NAME || 'delta_app'
+
+
+let connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "apnacollege62",
+  database: "delta_app",
 });
 
-connection.connect(err => {
-  if (err) {
-    console.error('Database connection failed:', err);
-    process.exit(1); // optional: crash so Render shows failure
-  }
-  console.log('Connected to DB');
-});
+
 
 
 
