@@ -1,0 +1,71 @@
+.mainbox{
+    display: flex;
+    justify-content: center;
+}
+body{
+text-align: center;
+}
+.btn{
+    height:200px ;
+    width:200px ;
+    border-radius: 20%;
+    border: 10px solid black;
+    margin: 2.5rem;
+}
+.one{
+background-color:#c17e3f ;
+}
+.two{
+background-color:#d95980 ;
+}
+.three{
+background-color:#819ff9;
+}
+.four{
+background-color: #63aac0;
+}
+.gameflash{
+    background-color: whitesmoke;
+}
+.userflash{
+    background-color: gray;
+}
+.start{
+    font-size: 2rem;
+    background-color: rgb(36, 140, 36);
+    border-radius: 20%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: white;
+    border: 2px solid black;
+    padding: auto;
+}
+.start:hover{
+opacity: 1;
+box-shadow: #63aac0;background-color: rgb(7, 92, 7);
+}
+.reset{
+    font-size: 2rem;
+    background-color: rgb(231, 40, 40);
+    border-radius: 20%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: white;
+    border: 2px solid black;
+  
+
+}
+.reset:hover{
+opacity: 1;
+
+background-color: #c30505;
+
+
+}
+.game{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.s{
+    padding: auto;
+    margin: 20px 20px 20px 20px;
+}
